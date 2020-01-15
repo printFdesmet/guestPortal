@@ -1,6 +1,6 @@
 Add-Type -AssemblyName 'System.Web'
 # creates a variable that stores a string that is password enabled
-$password = ConvertTo-SecureString "sab2gpl3s" -AsPlainText -Force
+$password = Get-Content login.txt | ConvertTo-SecureString
 # creates a login object making it possible to login remotly behind the scenes.
 $cred = New-Object System.Management.Automation.PSCredential ("agplastics\administrator", $password)
 
